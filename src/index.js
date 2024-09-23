@@ -1,13 +1,21 @@
-// require("dotenv").config({ path: "./env" });  // everywjer we have import--> here we have require !?
+// require("dotenv").config({ path: "./env" });  // everywhere we have import--> here we have require !?
 
-import dotenv from "dotenv"; // config bhi krna hai dotenv ko
-import connectDB from "./DB/index_db.js";
+import dotenv from "dotenv"; // config bhi krna hai dotenv ko if we use import
+import connectDB from "./DB/index.db.js";
 
 dotenv.config({
   path: "./env",
 });
 
-connectDB();
+connectDB() // asynchronous method return promise
+  .then(() => {
+    app.listen(process.env.PORT || 8001, () => {
+      console.log(`Server is running on port : ${process.env.PORT}`);
+    });
+  })
+  .catch((err) => {
+    console.log("MONGODB connection failed!", err);
+  });
 
 /* ANOTHER APPROACH
 

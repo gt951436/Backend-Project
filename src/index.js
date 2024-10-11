@@ -36,5 +36,5 @@ const app = express();
     console.error("ERROR : ", error);
     throw error;
   }
-})(); // iffy function
+})(); // iffe function
 */

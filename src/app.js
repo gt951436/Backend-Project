@@ -17,7 +17,7 @@ app.use(
 );
 app.use(
   express.urlencoded({
-    extended: true,
+    extended: true, // parsing is done using qs library --> more complex nested data structures 
     limit: "16kb",
   })
 );

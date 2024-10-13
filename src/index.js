@@ -3,6 +3,9 @@
 import dotenv from "dotenv"; // config bhi krna hai dotenv ko if we use import
 import connectDB from "./DB/index.db.js";
 
+import express from "express";
+const app = express();
+
 dotenv.config({
   path: "./env",
 });
